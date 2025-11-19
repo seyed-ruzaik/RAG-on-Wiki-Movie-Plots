@@ -30,27 +30,28 @@ The idea is straightforward:
 
 2. **Preprocess the dataset**
    ```bash
-   python src/preprocess.py --input data/wiki_movie_plots_deduped.csv --output data/processed/subset.csv --limit 5000
+   python src/preprocess.py --input data/raw/wiki_movie_plots_deduped.csv --output data/processed/subset.csv --n 300
    ```
 
 3. **Chunk the text**
    ```bash
-   python src/chunk.py --input data/processed/subset.csv --output data/processed/chunks.csv
+   python src/chunking.py --input data/processed/subset.csv --output data/processed/chunks.csv --chunk_size 300 --overlap 50
    ```
 
 4. **Create embeddings with Chroma**
    ```bash
-   python src/embeddings.py --input data/processed/chunks.csv --persist_dir data/vectorstore
+   python src\embeddings.py --input data\processed\chunks.csv --persist_dir data\vectorstore --collection movie_chunks --batch_size 128
    ```
 
 5. **Try retrieval**
    ```bash
-   python src/retrieve.py --query "a ship hits an iceberg" --persist_dir data/vectorstore --k 3
+   python src\retrieve.py --query "a ship hits an iceberg" --persist_dir data\vectorstore --collection movie_chunks --k 3 --return_json
+
    ```
 
 6. **Generate an answer**
    ```bash
-   python src/generate.py --query "a ship hits an iceberg" --persist_dir data/vectorstore --model_name google/flan-t5-base
+   python src\generate.py --query "a ship hits an iceberg" --persist_dir data\vectorstore --collection movie_chunks --k 3 --model_name google/flan-t5-small --max_input_tokens 1024 --max_new_tokens 256 --temperature 0.2 --top_p 0.9 --save_json data\outputs\answer_iceberg.json
    ```
 
 7. **Run the web app**
@@ -61,7 +62,7 @@ The idea is straightforward:
 
 8. **Batch evaluate multiple queries**
    ```bash
-   python src/evaluate.py --persist_dir data/vectorstore --model_name google/flan-t5-base --out data/outputs/eval.json
+   python src\evaluate.py --persist_dir data\vectorstore --collection movie_chunks --model_name google/flan-t5-base --k 3 --max_new_tokens 128 --deterministic true --out data\outputs\eval_results.json
    ```
 
 ---

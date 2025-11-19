@@ -1,6 +1,6 @@
 {
   "question": "a ship hits an iceberg",
-  "answer": "I don't know",
+  "answer": "If any context mentions a ship hitting or striking an iceberg, name the film title(s) and summarize in one short sentence.",
   "contexts_used": [
     "Atlantic is a drama film based on the RMS Titanic and set aboard a fictional ship, called the Atlantic. The main plotline revolves around a man who has a shipboard affair with a fellow passenger, which is eventually discovered by his wife. The ship also has aboard an elderly couple, the Rools, who are on their anniversary cruise. Midway across the Atlantic Ocean, the Atlantic strikes an iceberg and is damaged to the point where it is sinking into the Atlantic. A shortage of lifeboats causes the crew to only allow women and children in (though the captain allows a few men to take to the last remaining boats as the disaster reaches its zenith) and many couples are separated. Mrs. Rool refuses to leave her husband and after the boats are gone all the passengers gather on the deck and sing \"Nearer, My God, to Thee\" as the Atlantic sinks into the ocean. The final scenes depict a group of passengers saying the Lord's Prayer in a flooding lounge.",
     "In 1893, Betty Brown meets a debonair young naval officer and falls in love. She conceals her pregnancy from him, and he rejoins his ship. The boy, Albert Brown, is brought up by his mother and joins the navy as soon as he is old enough. Brown's ship is posted to the Pacific during the First World War. He is marooned on the remote Galápagos island of Resolution when the cruiser he is serving on, HMS Rutland, is sunk. A German battlecruiser (the fictitious SMS Ziethen[1]) takes him prisoner whilst it defeats an inferior British force. It then suffers damage in a second encounter and her captain plans to pull into an isolated Pacific anchorage to try to repair his vessel. There, the resourceful Brown escapes, steals a rifle and a small amount of ammunition, and makes his way ashore. The German vessel's main battery cannot be brought to bear on Brown, and he is able to pick off exposed crew-members who are trying to repair her punctured hull plates. The anchorage is an impenetrable tangle of scrub and thorn bushes, making it difficult for shore parties to run him to ground. Brown is eventually killed by a German shot, never learning that his actions delayed the repairs long enough for the raider's British pursuers to catch her up and destroy her. Brown becomes a hero, the British erect a cross on the highest point on the island to commemorate him, and the commander of the British ship discovers that Brown was the illegitimate son he always denied he had.",
@@ -9,18 +9,18 @@
   "metadatas": [
     {
       "title": "Atlantic",
-      "original_plot_word_count": 170,
+      "chunk_id": 0,
+      "original_plot_word_count": 170
+    },
+    {
+      "title": "Forever England",
+      "original_plot_word_count": 260,
       "chunk_id": 0
     },
     {
-      "original_plot_word_count": 260,
-      "chunk_id": 0,
-      "title": "Forever England"
-    },
-    {
-      "chunk_id": 1,
       "original_plot_word_count": 456,
-      "title": "The Enemy Below"
+      "title": "The Enemy Below",
+      "chunk_id": 1
     }
   ],
   "model_name": "google/flan-t5-small"
